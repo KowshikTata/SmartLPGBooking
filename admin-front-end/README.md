@@ -25,3 +25,24 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## For components
+check app->components
+
+## For services
+check app->services
+
+##For classes
+Check app->common
+
+## Admin LayOut
+1.Dash Board
+2.Tables
+3.Update Pahal
+4.Update Order
+5.Update Product
+
+## Admin UserName and Password
+userName: admin
+Password: admin
+
