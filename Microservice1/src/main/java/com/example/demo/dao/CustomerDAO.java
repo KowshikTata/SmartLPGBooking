@@ -15,5 +15,8 @@ public interface CustomerDAO extends JpaRepository<Customer,Integer>{
 
 	List<Customer> findByRequestingPahal(boolean var);
 	
+	boolean findByRequestingPahal(String email);
+	
+	boolean findByIsGivingUpSubsidy(String email);
 
 }

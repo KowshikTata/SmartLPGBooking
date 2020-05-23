@@ -7,5 +7,5 @@ import com.example.demo.model.Admin;
 
 @Repository
 public interface AdminDAO extends JpaRepository<Admin,String>{
-
+	public Admin findByUserNameAndPassword(String userName, String password);
 }
