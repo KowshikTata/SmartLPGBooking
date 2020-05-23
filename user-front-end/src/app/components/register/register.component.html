@@ -1,0 +1,75 @@
+<header class="header-section ">
+
+  <div class="site-navbar">
+    <!-- Logo -->
+    <a routerLink="/home" class="site-logo">
+      <img src="assets/img/logo.png" alt="">
+    </a>
+    <div class="header-right">
+      <div class="header-info-box">
+
+        <div class="hib-text">
+
+          <button class="btn" routerLink="/register" ><i class="fa fa-user" >Register</i></button>
+
+        </div>
+
+      </div>
+      <div class="header-info-box">
+
+        <div class="hib-text">
+          <button class="btn" routerLink="/login"><i class="fa fa-sign-in" >Log In</i></button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>
+<h1 style="text-align: center;font-family: fantasy;">Create a Account</h1>
+<section class="col-md-6 mx-auto mt-4">
+
+
+
+  <form class="container"  #frm="ngForm" (ngSubmit)="register()">
+
+
+
+    <div class="mt-3"><b>UserName</b></div>
+    <div><input type="text" name="username" [(ngModel)]="registration.userName"  #uname="ngModel" [ngClass]="{ 'is-invalid': frm.submitted && uname.invalid ||uname.touched && uname.pristine  }"  class="form-control"   required/>
+    </div>
+    <div *ngIf="uname.invalid || uname.touched && uname.pristine" class="invalid-feedback">
+      <div *ngIf="uname.errors.required">Enter UserName</div>
+    </div>
+    <div class="mt-3"><b>Password</b></div>
+    <div><input type="password" name="password" [(ngModel)]="registration.password"  #pass="ngModel" [ngClass]="{ 'is-invalid': frm.submitted && pass.invalid ||pass.touched && pass.pristine  }"  class="form-control"   required/>
+    </div>
+    <div *ngIf="pass.invalid || pass.touched && pass.pristine" class="invalid-feedback">
+      <div *ngIf="pass.errors.required">Enter Password</div>
+    </div>
+
+    <div class="mt-3"><b>Email</b></div>
+    <div><input type="email" name="email" [(ngModel)]="registration.email"   #seats1=ngModel [ngClass]="{ 'is-invalid': frm.submitted && seats1.invalid ||seats1.touched && seats1.pristine  }"  class="form-control" required/>
+    </div>
+    <div *ngIf="seats1.invalid || seats1.touched && seats1.pristine" class="invalid-feedback">
+      <div *ngIf="seats1.errors.required">Enter Valid Email</div>
+    </div>
+
+
+
+    <div class="mt-3"><b>Phone</b></div>
+    <div><input type="tel" pattern="[6-9]{1}[0-9]{9}" name="userphone" [(ngModel)]="registration.phone"  #upno="ngModel" [ngClass]="{ 'is-invalid': frm.submitted && upno.invalid ||upno.touched && upno.pristine  }"  class="form-control"   required/>
+    </div>
+    <div *ngIf="upno.invalid || upno.touched && upno.pristine" class="invalid-feedback">
+      <div *ngIf="upno.errors.required">Enter Phone Number</div>
+
+    </div>
+
+
+
+
+    <div class="mt-3" style="text-align: left;"><input type="submit"  value="Create Account" [disabled]="!frm.valid"  class="btn btn-dark" /></div>
+
+
+
+  </form><br/><br/><br/><br/><br/>
+</section>

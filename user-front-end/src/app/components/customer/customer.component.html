@@ -1,0 +1,183 @@
+<app-header></app-header>
+<div class="jumbotron">
+  <div class="container"><br>
+    <h1 class="text-center">New Lpg connection request</h1>
+    <form  class="form-horizontal" [formGroup]="connectionForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label class="control-label col-sm-2"  >First Name:</label>
+        <div class="col-sm-5">
+          <input type="email" class="form-control" id="first_name" placeholder="Enter first name" formControlName="firstName"  [(ngModel)]="customer.firstName" name="email" required>
+          <div *ngIf="submitted && connectionForm.controls.firstName.errors">
+            <div class="text-dark" *ngIf="connectionForm.controls.firstName.errors.required">
+              First Name is required
+            </div>
+            <div class="text-dark" *ngIf="connectionForm.controls.firstName.errors.pattern">
+              Only alphabet allowed and the first letter should be capital
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2" >Last Name:</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control" id="last_name" placeholder="Enter last name" formControlName="lastName" [(ngModel)]="customer.lastName" name="lastName" required>
+          <div *ngIf="submitted && connectionForm.controls.lastName.errors">
+            <div class="text-dark" *ngIf="connectionForm.controls.lastName.errors.required">
+              Last name is required
+            </div>
+            <div class="text-dark" *ngIf="connectionForm.controls.lastName.errors.pattern">
+              Only alphabet allowed and the first letter should be capital
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="dob">DOB :</label>
+        <div class="col-sm-5">
+          <input type="date" class="form-control" id="dob" placeholder="enter your dob" formControlName="dob" [(ngModel)]="customer.dob" name="dob" required>
+          <div *ngIf="submitted && connectionForm.controls.dob.errors">
+            <div class="text-dark" *ngIf="connectionForm.controls.dob.errors.required">
+              Date of birth is required
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="house_no">House No :</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control" id="house_no" placeholder="enter your house number" formControlName="houseNo" [(ngModel)]="customer.houseNo" name="house_no" required>
+          <div *ngIf="submitted && connectionForm.controls.houseNo.errors">
+            <div class="text-dark" *ngIf="connectionForm.controls.houseNo.errors.required">
+              House number of is required
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="street">Street :</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control" id="street" placeholder="enter your street name" formControlName="street" [(ngModel)]="customer.street" name="street" required>
+          <div *ngIf="submitted && connectionForm.controls.street.errors">
+            <div class="text-dark" *ngIf="connectionForm.controls.street.errors.required">
+              Street number is required
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="city">City :</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control" id="city" placeholder="enter your city name"  formControlName="city" name="city" required [(ngModel)]="customer.city">
+          <div *ngIf="submitted && connectionForm.controls.city.errors">
+            <div class="text-dark" *ngIf="connectionForm.controls.city.errors.required">
+              City name is required
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="district">District :</label>
+        <!-- <div class="col-sm-5">
+        <select class="form-control" id="district" name="district" required [(ngModel)]="customer.district">
+          <option>vishakhapatnam</option>
+          <option>Vizayanagaram</option>
+          <option>Nellore</option>
+          <option>East Godavari</option>
+          <option></option>
+        </select>
+        </div> -->
+        <div class="col-sm-5">
+          <input type="text" class="form-control" id="district" placeholder="enter your district" name="district" required formControlName="district" [(ngModel)]="customer.district" >
+          <div *ngIf="submitted && connectionForm.controls.district.errors">
+            <div class="text-dark" *ngIf="connectionForm.controls.district.errors.required">
+              District is required
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="state">State :</label>
+        <div class="col-sm-5">
+          <select class="form-control" id="state" name="state" formControlName="state" [(ngModel)]="customer.state">
+            <option value="selected" selected>--Select state--</option>
+            <option value="Andhra Pradesh">Andhra Pradesh</option>
+            <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+            <option value="Assam">Assam</option>
+            <option value="Bihar">Bihar</option>
+            <option value="Chandigarh">Chandigarh</option>
+            <option value="Chhattisgarh">Chhattisgarh</option>
+            <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+            <option value="Daman and Diu">Daman and Diu</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Lakshadweep">Lakshadweep</option>
+            <option value="Puducherry">Puducherry</option>
+            <option value="Goa">Goa</option>
+            <option value="Gujarat">Gujarat</option>
+            <option value="Haryana">Haryana</option>
+            <option value="Himachal Pradesh">Himachal Pradesh</option>
+            <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+            <option value="Jharkhand">Jharkhand</option>
+            <option value="Karnataka">Karnataka</option>
+            <option value="Kerala">Kerala</option>
+            <option value="Madhya Pradesh">Madhya Pradesh</option>
+            <option value="Maharashtra">Maharashtra</option>
+            <option value="Manipur">Manipur</option>
+            <option value="Meghalaya">Meghalaya</option>
+            <option value="Mizoram">Mizoram</option>
+            <option value="Nagaland">Nagaland</option>
+            <option value="Odisha">Odisha</option>
+            <option value="Punjab">Punjab</option>
+            <option value="Rajasthan">Rajasthan</option>
+            <option value="Sikkim">Sikkim</option>
+            <option value="Tamil Nadu">Tamil Nadu</option>
+            <option value="Telangana">Telangana</option>
+            <option value="Tripura">Tripura</option>
+            <option value="Uttar Pradesh">Uttar Pradesh</option>
+            <option value="Uttarakhand">Uttarakhand</option>
+            <option value="West Bengal">West Bengal</option>
+          </select>
+          <div *ngIf="submitted && connectionForm.controls.state.errors">
+            <div class="text-dark" *ngIf="connectionForm.controls.state.errors.required">
+              State is required
+            </div>
+          </div>
+        </div>
+        <!-- <div class="col-sm-5">
+          <input type="text" class="form-control" id="state" placeholder="enter your state " name="state" required [(ngModel)]="customer.state" >
+        </div> -->
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="pincode">pincode :</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control" id="pincode" placeholder="enter your pincode " name="pincode" required formControlName="pincode" [(ngModel)]="customer.pincode " >
+          <div *ngIf="submitted && connectionForm.controls.pincode.errors">
+            <div class="text-dark" *ngIf="connectionForm.controls.pincode.errors.required">
+              pincode is required
+            </div>
+            <div class="text-dark" *ngIf="connectionForm.controls.pincode.errors.minLength">
+              pincode should be of length 6
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- submit button -->
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>
