@@ -1,0 +1,25 @@
+<app-header></app-header>
+
+<table border="1" class="table table-hover">
+  <thead class="thead-dark">
+  <tr class="bg-primary">
+    <th>id</th>
+    <th>delivery Status</th>
+    <th>Order Date</th>
+    <th>Price</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let tempOrders of objOrder ">
+    <td >{{ tempOrders.id }}</td>
+    <td>
+      <div *ngIf="tempOrders.status==true;else ElseBlock">Delivered!!</div>
+      <ng-template #ElseBlock>In Progress</ng-template>
+
+    </td>
+    <td>{{tempOrders.date |date:"yyyy-MM-dd"}}</td>
+    <td>{{tempOrders.price}}</td>
+  </tr>
+  </tbody>
+</table>
+

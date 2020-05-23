@@ -1,0 +1,19 @@
+<app-header></app-header>
+
+<table border="1" class="table table-hover">
+  <thead class="thead-dark">
+  <tr class="bg-primary">
+    <th>Price</th>
+    <th>Units In Stock</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let tempProducts of product ">
+    <td >{{ tempProducts.price }}</td>
+    <td>{{tempProducts.unitsInStock}}</td>
+  </tr>
+  </tbody>
+</table>
+Click to book LPG
+<button (click)="bookLPG()" class="btn btn-danger">Book NOW</button>
+

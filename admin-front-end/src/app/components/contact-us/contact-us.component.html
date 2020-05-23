@@ -1,0 +1,77 @@
+
+<!-- Header section  -->
+<header class="header-section ">
+
+  <div class="site-navbar">
+    <!-- Logo -->
+    <a href="index.html" class="site-logo">
+      <img src="assets/img/logo.png" alt="">
+    </a>
+    <div class="header-right">
+      <div class="header-info-box">
+
+        <div class="hib-text">
+
+          <button class="btn" routerLink="/register" ><i class="fa fa-user" >Register</i></button>
+
+        </div>
+
+      </div>
+      <div class="header-info-box">
+
+        <div class="hib-text">
+          <button class="btn" routerLink="/login"><i class="fa fa-sign-in" >Log In</i></button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+
+
+<section id="contact-us" class="contact-us section"  >
+  <div class="container mx-auto">
+    <div class="container" >
+      <!--      class="contact-head"-->
+      <div class="row">
+        <div class="col-lg-8 col-12">
+          <div class="form-main">
+            <div class="title">
+              <h3>Contact Us</h3>
+            </div>
+            <form class="form" (ngSubmit)="onSubmit()">
+              <div class="row">
+                <div class="col-lg-6 col-12">
+                  <div class="form-group">
+                    <label>Your Name</label>
+                    <input name="name" type="text" placeholder="Your Name" [(ngModel)]="usermodel.name" required minlength="3">
+                  </div>
+                </div>
+                <div class="col-lg-6 col-12">
+                  <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" #email ng-control="email" required id="email" placeholder="email"  [(ngModel)]="usermodel.email"
+                           required email name="email">
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group message">
+                    <label>Message</label>
+                    <textarea name="message" placeholder="What's on your mind?" [(ngModel)]="usermodel.message"
+                              required></textarea>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group button">
+                    <button type="submit" class="btn" >Submit</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+    </div>
+  </div>
+  </div>
+</section>
