@@ -1,0 +1,60 @@
+<div class="card mb-4">
+  <div class="card-header"><i class="fas fa-table mr-1"></i>DataTable</div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+        <tr>
+          <th>Customer Id</th>
+          <th>Fisrt Name</th>
+          <th>Last Name</th>
+          <th>DOB</th>
+          <th>House No</th>
+          <th>Street</th>
+          <th>City</th>
+          <th>District</th>
+          <th>State</th>
+          <th>Requesting Pahal</th>
+          <th>Joined Pahal</th>
+          <th>Action</th>
+        </tr>
+        </thead>
+        <tfoot>
+        <tr>
+          <th>Customer Id</th>
+          <th>Fisrt Name</th>
+          <th>Last Name</th>
+          <th>DOB</th>
+          <th>House No</th>
+          <th>Street</th>
+          <th>City</th>
+          <th>District</th>
+          <th>State</th>
+          <th>Requesting Pahal</th>
+          <th>Joined Pahal</th>
+          <th>Action</th>
+        </tr>
+        </tfoot>
+        <tbody>
+        <tr *ngFor="let customer of customers | async ">
+          <td>{{customer.id}}</td>
+          <td>{{customer.firstName}}</td>
+          <td>{{customer.lastName}}</td>
+          <td>{{customer.dob}}</td>
+          <td>{{customer.houseNo}}</td>
+          <td>{{customer.street}}</td>
+          <td>{{customer.city}}</td>
+          <td>{{customer.district}}</td>
+          <td>{{customer.state}}</td>
+          <td>{{customer.requestingPahal}}</td>
+          <td>{{customer.joinedPahal}}</td>
+          <td>
+            <button (click)="customerupdate(customer.id)" class="btn btn-info" style="margin-left: 10px">Approve Pahal</button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,132 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<body>
+<div
+  class="container-fluid bg"
+  style="background-image: url(assets/images/bg11.jpg);"
+>
+  <div class="row">
+    <div class="col-md-4 col-sm-4 col-xs-4"></div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+      <br />
+      <br />
+      <br />
+      <!-- <h1>Login</h1> -->
+      <br />
+      <form id="log1" [formGroup]="adminSaveForm" (ngSubmit)="loginUser()">
+        <img
+          class="img rounded-circle z-depth-2"
+          data-holder-rendered="true"
+          src="assets/images/icon.png"
+        />
+        <div class="form-group">
+          <label for="userName">Username</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="userName"
+            placeholder="Enter Username"
+          />
+          <!--Predefined Structural Directives: *ngIf, *ngFor, *ngSwitchCase -->
+          <div class="alert alert-danger" *ngIf = "(UserName.touched) && (UserName.invalid)"
+               style="margin-top: 5px;">
+            <div
+              class="text-danger"
+              *ngIf="UserName.errors.required"
+            >
+              Username is required
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            formControlName="password"
+            placeholder="Enter Password"
+          />
+          <div class="alert alert-danger" *ngIf = "(UserPassword.touched) && (UserPassword.invalid)"
+               style="margin-top: 5px;">
+            <div
+              class="text-danger"
+              *ngIf="UserPassword.errors.required"
+            >
+              Password is required
+            </div>
+          </div>
+        </div>
+        &nbsp;&nbsp;&nbsp;<button [disabled]="!adminSaveForm.valid"  class="btn btn-success btn-block">
+        Login
+      </button>
+        &nbsp;
+<!--        <button-->
+<!--          class="btn btn-danger btn-block"-->
+<!--          type="reset"-->
+<!--          routerLink="/signup"-->
+<!--        >-->
+<!--          SignUp-->
+<!--        </button>-->
+        &nbsp;
+        <br />
+        <div *ngIf="invalidLogin">
+          <div class="text-danger">
+            Invalid UserName or Password
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-4 col-sm-4 col-xs-4"></div>
+  </div>
+  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+</div>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+</body>
+</html>
+
+<!--<head>-->
+<!--  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"-->
+<!--        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">-->
+<!--</head>-->
+
+<!--<h3 align="center">Login</h3>-->
+<!--<div class="row">-->
+<!--  <div class="col-sm-4"></div>-->
+<!--  <div class="col-sm-4" >-->
+<!--    <form [formGroup]="adminSaveForm" #saveadmin (ngSubmit)="loginUser()">-->
+<!--      <small class="danger"><strong>{{msg}}</strong></small>-->
+<!--      <div class="form-group">-->
+<!--        <label for="userName">User Name</label>-->
+<!--        <input type="text" class="form-control"  formControlName="userName" data-toggle="tooltip"-->
+<!--               data-placement="right" title="Enter UserName"  [(ngModel)]="admin.userName">-->
+<!--        <div class="alert alert-danger" *ngIf = "(UserName.touched) && (UserName.invalid)"-->
+<!--             style="margin-top: 5px;">-->
+<!--          <span *ngIf="UserName.errors.required">Enter UserName</span>-->
+<!--&lt;!&ndash;          <span *ngIf="UserEmail.errors.pattern">enter valid Email id </span>&ndash;&gt;-->
+<!--        </div>-->
+<!--      </div>-->
+
+
+<!--      <div class="form-group">-->
+<!--        <label for="password">Password</label>-->
+<!--        <input type="password" class="form-control"  formControlName="password" data-toggle="tooltip"-->
+<!--               data-placement="right" title="Enter Password" [(ngModel)]="admin.password">-->
+<!--        <div class="alert alert-danger" *ngIf = "(UserPassword.touched) && (UserPassword.invalid)"-->
+<!--             style="margin-top: 5px;">-->
+<!--          <span *ngIf="UserPassword.errors.required">Password is required</span>-->
+<!--&lt;!&ndash;          <span *ngIf = "UserPassword.errors.min"> min Error</span>&ndash;&gt;-->
+<!--&lt;!&ndash;          <span *ngIf = "UserPassword.errors.max">Max Error</span>&ndash;&gt;-->
+<!--&lt;!&ndash;          <span *ngIf="UserPassword.errors.pattern"> password should atleast contain one special character,one digit,one uppercase,one lower case</span>&ndash;&gt;-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <button [disabled]="!adminSaveForm.valid" type="submit" class="btn btn-success" >Login</button>-->
+<!--&lt;!&ndash;      Don't have an Account? <button [routerLink]="'/register'" class="btn btn-sm btn-link">Register</button>&ndash;&gt;-->
+<!--    </form>-->
+<!--  </div>-->
+<!--</div>-->
+
