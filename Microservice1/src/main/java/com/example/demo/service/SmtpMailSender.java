@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.model.ContactModel;
-
+//mail
 @Service("smtpMailSender")
 public class SmtpMailSender
 {
